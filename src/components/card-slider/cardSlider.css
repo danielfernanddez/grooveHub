@@ -1,0 +1,329 @@
+/* Estilos para el contenedor principal del slider de tarjetas */
+.CardSlider {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+}
+
+/* Estilos para el título del slider de tarjetas */
+.CardSlider-h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-principal);
+}
+
+/* Contenedor de las tarjetas dentro del slider */
+.CardSlider-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+/* Estilos para cada tarjeta individual */
+.Card-container {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #232323;
+    max-height: 400px;
+    position: relative;
+    border-radius: 10px;
+    opacity: .8;
+    transition: .3s;
+    cursor: pointer;
+}
+
+/* Efecto al pasar el ratón sobre la tarjeta */
+.Card-container:hover {
+    transform: scale(1.015);
+    box-shadow: 1px 4px 20px rgba(0, 0, 0, 0.4);
+    opacity: 1;
+}
+
+/* Efecto al hacer clic en la tarjeta */
+.Card-container:active {
+    border: 1px solid black;
+}
+
+/* Estilos para la imagen de la tarjeta */
+.Card-img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 150px;
+    transition: .3s;
+}
+
+/* Mostrar el botón de reproducción solo cuando la imagen se pasa sobre ella */
+.Card-img:hover .Card-btn {
+    display: block;
+}
+
+/* Contenido de la tarjeta */
+.Card-content {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: .5rem;
+    gap: .5rem;
+}
+
+/* Estilos para los datos dentro de la tarjeta */
+.Card-data {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Información de la tarjeta: nivel, estilo, tiempo */
+.Card-info {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .5rem;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Estilos para el nivel de la tarjeta */
+.Card-level {
+    background-color: var(--color-principal);
+    color: #ffffff;
+    padding: 0rem 0.5rem;
+    border-radius: 2.5px;
+}
+
+/* Estilos para el estilo y el tiempo de la tarjeta */
+.Card-style, .Card-time {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0rem 0.5rem;
+    border-radius: 2.5px;
+}
+
+/* Icono de la tarjeta */
+.Card-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+/* Nombre del profesor en la tarjeta */
+.Card-teacher {
+    color: rgb(128, 128, 128);
+    font-size: .8rem;
+}
+
+/* Estilos para el botón de reproducción de la tarjeta */
+.Card-btn {
+    background-color: rgb(0, 124, 238, .7);
+    color: #ffffff;
+    border-radius: 5px 0 0 5px;
+    padding: .2rem .8rem;
+    position: absolute;
+    top: 3rem;
+    right: 0.05rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* Estilos para el popup de la tarjeta */
+.CardPopup {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    position: fixed;
+    inset: 0 0 0 0;
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    z-index: 101;
+}
+
+/* Mostrar el popup cuando está activo */
+.CardPopup.isActive {
+    display: flex;
+}
+
+/* Contenedor del contenido del popup */
+.CardPopup-container {
+    background-color: #ffffff;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 4rem;
+    min-width: 90%;
+    min-height: 82%;
+    border-radius: 20px;
+    position: relative;
+}
+
+/* Estilos para la sección del video en el popup */
+.CardPopup-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 3;
+    flex-basis: 0;
+    background-color: #000000;
+    min-width: 100%;
+    border-radius: 18px 18px 0 0;
+    position: relative;
+}
+
+/* Botón de reproducción en el popup */
+.CardPopup-play {
+    max-width: 4rem;
+    cursor: pointer;
+}
+
+/* Barra de controles del video en el popup */
+.CardPopup-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+    position: absolute;
+    bottom: -2rem;
+    left: 1rem;
+    transition: .2s;
+}
+
+/* Iconos dentro de la barra de controles */
+.CardPopup-bar img {
+    width: 2rem;
+    cursor: pointer;
+}
+
+/* Mostrar la barra de controles cuando se pasa el ratón sobre el video */
+.CardPopup-video:hover .CardPopup-bar {
+    bottom: 1rem;
+}
+
+/* Contenido del popup */
+.CardPopup-content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 1.5rem;
+}
+
+/* Sección de la clase en el contenido del popup */
+.CardPopup-class {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+}
+
+/* Información del profesor en el contenido del popup */
+.CardPopup-teacher {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Imagen del profesor en el popup */
+.CardPopup-teacherimg {
+    max-width: 5rem;
+    max-height: 5rem;
+    border-radius: 100%;
+}
+
+/* Nombre del profesor en el popup */
+.CardPopup-teachername {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Datos de la clase en el popup */
+.CardPopup-data {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Estilos para el contenido adicional en el popup */
+.CardPopup-more {
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+    align-items: end;
+}
+
+/* Contenido SVG dentro del popup */
+.CardPopup-svg {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1.5rem;
+}
+
+/* Iconos dentro del contenido SVG */
+.CardPopup-svg img {
+    width: 2rem;
+    cursor: pointer;
+}
+
+/* Texto adicional en el popup */
+.CardPopup-more span {
+    background-color: var(--color-principal);
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+/* Botón para cerrar el popup */
+.CardPopup-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+    opacity: .7;
+    z-index: 102;
+}
+
+/* Icono de cierre del popup */
+.CardPopup-close img {
+    width: 2.5rem;
+}
+
+/* Estilos responsive para pantallas pequeñas */
+@media(max-width: 800px) {
+    .CardSlider {
+        padding: 1rem;
+    }
+
+    .CardPopup-content {
+        gap: 1rem;
+    }
+
+    .CardPopup-bar {
+        display: none;
+    }
+
+    .CardPopup-teacher {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .CardPopup-teachername {
+        font-size: 1.5rem;
+    }
+
+    .CardPopup-data {
+        flex-flow: column wrap;
+        gap: .5rem;
+        font-size: .8rem;
+    }
+
+    .CardPopup-more span {
+        padding: .5rem 1.5rem;
+        font-size: .8rem;
+    }    
+}

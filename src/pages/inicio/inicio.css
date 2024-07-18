@@ -1,0 +1,8 @@
+.Inicio-container{
+    background-color: var(--color-bg);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}

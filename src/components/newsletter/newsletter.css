@@ -1,0 +1,84 @@
+.Newsletter{
+    background-image: url('/assets/funny-bg1.png');
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem 3rem;
+
+
+}
+.Newsletter-container{
+    margin: 4rem 0rem;
+    display: flex;
+    flex-flow: column nowrap;
+   
+    justify-content: center;
+
+    padding: 2rem 1rem;
+    gap: 2rem;
+}
+.Newsletter-span{
+    font-size: 2.5rem;
+    align-self: center;
+    font-weight: 700;
+    color: #eeecff;
+    text-align: center;
+    line-height: 3rem;
+}
+.Newsletter-p{
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 675px;
+    color: #eeecff;
+}
+.Newsletter-form{
+    background-color: #e0d3ff;
+    display: flex;
+    flex-flow: row wrap;
+
+    min-height: 4rem;
+    padding: .5rem;
+    border-radius: 10px;
+    gap: .5rem;
+
+}
+.Newsletter-input{
+    flex-grow: 3;
+    flex-basis: 0;
+    background-color: #eeecff;
+    border-radius: 10px;
+    padding: 0rem 1rem;
+    font-weight: 600;
+    outline: none;
+    min-width: 20rem; 
+    min-height: 4rem;
+}
+.Newsletter-submit{
+    background-color: var(--color-principal);
+    color: #ffffff;
+    font-weight: 600;
+    flex-grow: 1;
+    flex-basis: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: .4s;
+    min-height: 4rem;
+}
+.Newsletter-submit:hover{
+    background-color: #b28fff;
+}
+.Newsletter-submit:active{
+    border: 1px solid black;
+}
+
+@media (max-width:550px){
+    .Newsletter-input, .Newsletter-submit{
+        flex-grow: 1;
+        flex-basis: 0;
+        
+    }
+}

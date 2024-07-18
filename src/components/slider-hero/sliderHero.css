@@ -1,0 +1,122 @@
+.Slider{
+    width: 100%;
+    max-height: 700px;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+}
+.Slider-container{
+    display: grid;
+    transition: all .5s ease;
+    align-items: center;
+    justify-content: center;
+}
+.Slider-wrapper{
+    position: relative;
+}
+.Slider-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.Slider-h2{
+    max-width: 35rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+}
+.Slider-cta{
+    background-color: var(--color-principal);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 100;
+}
+.Slider-cta:hover{
+    transform: translateY(-.12em); /* Movimiento hacia arriba cuando hover*/
+}
+.Slider-cta:active{
+    border: 1px solid black;
+}
+.Slider-arrow{
+    width: 4rem;
+    height: 4rem;
+
+    position: absolute;
+    top: calc( 50% - 1rem );
+    cursor: pointer;
+}
+.Slider-arrow.isDisabled{
+    opacity: 0;
+    pointer-events: none;
+}
+.Slider-arrow.Prev{
+    left: .5rem;
+}
+.Slider-arrow.Next{
+    right: .5rem;
+}
+.Slider-ul{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+
+    position: absolute;
+    bottom: 1rem;
+}
+.Slider-li{}
+.Slider-btn{
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: var(--color-bg);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.Slider-btn.isActive{
+    background-color: var(--color-principal);
+}
+
+/* MEDIA QUERIES RESPONSIVE */
+
+@media(max-width:810px){
+    .Slider-h2{
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+    .Slider-content{
+        top: 50%
+    }
+
+}
+
+@media(max-width:615px){
+    .Slider-h2{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .Slider-cta{
+        padding: .5rem 1.5rem;
+        font-size: .8rem;
+    }
+    .Slider-arrow{
+        width: 2.5rem;
+        height: 2.5rem;
+    
+        position: absolute;
+        top: calc( 50% - 1rem );
+        cursor: pointer;
+    }
+}

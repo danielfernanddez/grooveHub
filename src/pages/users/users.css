@@ -1,0 +1,270 @@
+
+/* PAGINA USERS*/
+.Users{
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 40rem;
+    gap: 3rem;
+    padding: 0rem 2rem;
+    padding-top: 5rem;
+}
+.Users-text{
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(63, 63, 87);
+}
+.Users-logout{
+    background-color: rgb(99, 2, 2);
+    color: rgb(255, 255, 255);
+    padding: .5rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: .5;
+    transition: .3s;
+}
+.Users-logout:hover{
+    opacity: 1;
+}
+.Users-logout:active{
+    border: 1px solid black;
+}
+.Users-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+
+    width: 100%;
+    border-radius: 10px;
+    background-color: transparent; /*#232323*/
+}
+
+@media(max-width:1377.5px){
+    .Users{
+        padding-top: 6.5rem;
+    }
+    .Users-text{
+        line-height: 2.5rem;
+    }
+}
+
+
+
+
+/* ANADIR BOX*/
+.Anadir{
+    background-color: rgb(204, 204, 235); /*rgb(204, 204, 235)*/
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: start;
+    gap: 1rem;
+    position: relative;
+    padding: 1rem;
+    border-radius: 20px;
+    color: rgb(63, 63, 87);
+    min-width: 18rem;
+
+}
+.Anadir-texto{
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(63, 63, 87);
+}
+
+.Anadir-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.Anadir-form{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    gap: 1rem;
+}
+.Anadir-input{
+    background-color: rgb(63, 63, 87,.1);
+    padding: .5rem;
+    border-radius: 5px;
+}
+.Anadir-submit{
+    background-color: rgb(63, 63, 87);
+    color: rgb(195, 195, 223);
+    padding: .8rem;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+.Anadir-submit:hover{
+    color: white;
+    background-color: rgb(63, 63, 87,.9);
+}
+.Anadir-submit:active{
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+/* CONTENEDORES DE USUARIOS*/
+.Box {
+    background-color: rgb(204, 204, 235);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    gap: 1.75rem;
+    position: relative;
+    padding: 1rem;
+    border-radius: 15px;
+    color: rgb(63, 63, 87);
+    min-width: 19rem;
+}
+.Box-user{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .75rem;
+}
+.Box-img{
+    max-height: 10.5rem;
+    border-radius: 15px;
+}
+.Box-name{
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.Box-name::first-letter{
+    text-transform: uppercase;
+}
+.Box-btn{
+    display: flex;
+    flex-flow: row wrap;
+    gap: .75rem;
+}
+.Box-edit, .Box-delete{
+    cursor: pointer;
+    transition: .3s;
+    flex-grow: 1;
+    flex-basis: 0;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+.Box-edit{
+    border: 1px solid rgb(63, 63, 87);
+    border-radius: 10px;    
+}
+.Box-edit:hover{
+    background-color: rgb(63, 63, 87);
+    color: rgb(204, 204, 235);
+}
+.Box-edit:active{
+    border: 1px solid black;
+}
+.Box-delete{
+    background-color: rgb(99, 2, 2);
+    color: rgb(255, 230, 230);
+    border-radius: 10px;
+}
+
+
+
+/*POP UUP*/
+.Popup-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,.6);
+
+    position: fixed;
+    inset: 0 0 0 0;
+
+    display: none;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Popup-container.isActive{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Popup-div{
+    background-color:rgb(195, 195, 223);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    min-width: 400px;
+    min-height: 400px;
+
+    gap: 1rem;
+    padding: 2rem;
+    border-radius: 20px;
+}
+.Popup-h2{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+
+.Popup-form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.Popup-input{
+    border: 2px solid rgb(63, 63, 87);
+    border-radius: 10px;
+    padding: .5rem;
+    width: 100%;
+}
+.Popup-input::placeholder{
+    color: rgb(63, 63, 87, .8);
+}
+.Popup-edit{
+    background-color: rgb(63, 63, 87);
+    color: rgb(195, 195, 223);
+    padding: .8rem;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+.Popup-edit:hover{
+    color: white;
+    background-color: rgb(63, 63, 87,.9);
+}
+.Popup-edit:active{
+    border: 1px solid black;
+}
+
+
+.Popup-delete:hover{
+    color: white;
+    background-color: rgb(99, 2, 2,.9);
+}
+.Popup-delete:active{
+    border: 1px solid black;
+}
+
+
+.Popup-close{
+    cursor: pointer;
+}

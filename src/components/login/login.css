@@ -1,0 +1,51 @@
+.Login-container{
+    background-color: #141414;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.Login-section{
+    background-color: rgb(204, 180, 255, .05);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    min-width: 400px;
+    min-height: 500px;
+    border-radius: 20px;
+    padding: 2rem;
+}
+.Login-h1{
+    font-size: 35px;
+    color: #CCB4FF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+.Login-form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1rem;
+}
+.Login-input{
+    border: 2px solid #CCB4FF;
+    border-radius: 10px;
+    padding: .5rem;
+    width: 100%;
+}
+.Login-input::placeholder{
+    color: rgba(197, 197, 197, 0.3);
+}
+.Login-btn{
+    background-color: #CCB4FF ;
+    color: #141414;
+    padding: .8rem;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
