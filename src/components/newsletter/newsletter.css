@@ -55,6 +55,7 @@
     outline: none;
     min-width: 20rem; 
     min-height: 4rem;
+    color: black;
 }
 .Newsletter-submit{
     background-color: var(--color-principal);
@@ -79,6 +80,5 @@
     .Newsletter-input, .Newsletter-submit{
         flex-grow: 1;
         flex-basis: 0;
-        
     }
 }

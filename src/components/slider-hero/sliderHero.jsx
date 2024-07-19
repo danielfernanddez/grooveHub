@@ -39,22 +39,22 @@ export const SliderHero = () => {
 
     }, []);
 
-    const NextHandler = () => {
+    const NextHandler = () => { //funcion para pasar a la siguiente imagen del slider
         setSliderHero( sliderHero + 1 )
         if( sliderHero >= slider.length -1 ){
             setSliderHero(0)
         }
     }
 
-    const PrevHandler = () => {
+    const PrevHandler = () => { //funcion para volver a la imagen anterior del slider
         setSliderHero( sliderHero - 1 )
         if( sliderHero <= 0 ){
             setSliderHero( slider.length - 1 )
         } 
     }
 
-    const ChangeHandler = ( valor ) => {
-        setSliderHero( valor )
+    const ChangeHandler = ( _id ) => { //funcion para manejar el cambio de las imagenes del slider mediante los botones.
+        setSliderHero( _id )
     }
 
     return(
@@ -64,9 +64,9 @@ export const SliderHero = () => {
                 <div
                     className='Slider-container'
                     style={{
-                        width : `${ 100 * slider.length }%`,
-                        gridTemplateColumns : `repeat( ${ slider.length } , 1fr )`,
-                        transform : `translateX(-${ sliderHero * (100 / slider.length ) }%)`
+                        width : `${ 100 * slider.length }%`, // Configura el ancho total del contenedor en función del número de imágenes
+                        gridTemplateColumns : `repeat( ${ slider.length } , 1fr )`, // Define la disposición de columnas para las imágenes
+                        transform : `translateX(-${ sliderHero * (100 / slider.length ) }%)` // Desplaza el contenedor para mostrar la imagen activa
                     }}>
                     { slider.map( each =>
                         <Images
@@ -80,7 +80,7 @@ export const SliderHero = () => {
                     onClick={PrevHandler}
                     className={`Slider-arrow Prev ${ sliderHero === 0 ? 'isDisabled' : ''}`}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" viewBox="0 0 24 24"><path fill="#CCB4FF" d="M11.8 13H15q.425 0 .713-.288T16 12t-.288-.712T15 11h-3.2l.9-.9q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275l-2.6 2.6q-.3.3-.3.7t.3.7l2.6 2.6q.275.275.7.275t.7-.275t.275-.7t-.275-.7zm.2 9q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"/></svg>
-                </button>
+                </button> 
                 <button
                     onClick={NextHandler}
                     className={`Slider-arrow Next ${ sliderHero === slider.length - 1 ? 'isDisabled' : ''}`}>
@@ -116,7 +116,8 @@ const Images = (props) => {
 }
 
 
-const Li = ( props ) => {
+
+const Li = ( props ) => { ///*Cuando cree un nuevo state para guardar los datos en Mongo me dejó de funcionar y no he podido solucionarlo :/ */
     const { _id } = props
     const { sliderHero , ChangeHandler } = useContext(ContextSliderHero)
     return(

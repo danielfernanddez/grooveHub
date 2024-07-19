@@ -49,3 +49,11 @@
     font-weight: 600;
     cursor: pointer;
 }
+@media(max-width: 750px){
+    .Login-section{
+        min-width: 350px;
+    }
+    .Login-input{
+        padding: 1rem;
+    }
+}

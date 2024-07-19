@@ -56,7 +56,7 @@
     top: calc( 50% - 1rem );
     cursor: pointer;
 }
-.Slider-arrow.isDisabled{
+.Slider-arrow.isDisabled{ /* Cuando las arrows están disabled no se muestran*/
     opacity: 0;
     pointer-events: none;
 }
@@ -68,7 +68,7 @@
 }
 .Slider-ul{
     width: 100%;
-    display: flex;
+    display: none; /*Cuando cree un nuevo state para guardar los datos en Mongo me dejó de funcionar y no he podido solucionarlo*/
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
