@@ -72,7 +72,6 @@ const Card = (props) => {
     return (
         <div className='Card-container' onClick={() => cardPopupHandler(props)}>
             <img className='Card-img' src={src} alt={alt}/>
-            <button className='Card-btn'>PLAY</button>
             <div className='Card-content'>
                 <div className='Card-data'>
                     <div className='Card-info'>
