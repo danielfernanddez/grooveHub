@@ -47,6 +47,16 @@ export const Login = () => {
             if (userFound) {
                 // Si el usuario es encontrado, guarda la autenticación en localStorage y navega a la página de inicio
                 localStorage.setItem('login', 'true');
+
+                window.dataLayer.push({
+                    event : 'user_login',
+                    userId : userFound._id,
+                    user_name : userFound.email,
+                    loginMethod : 'email',
+                    loginTime : new Date().toISOString()
+                })
+                console.log('evento enviado - user_login')
+
                 navigate('/inicio');
                 window.location.reload(); // Recarga la página para aplicar los cambios
             } else {

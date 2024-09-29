@@ -42,6 +42,17 @@ export const CardSlider = () => {
     const cardPopupHandler = (valor) => {
         setSelectedCard(valor)
         setCardPopup(true)
+
+        const { level , style , time } = valor;
+
+        window.dataLayer.push({
+            event : 'selected_item',
+            class_info : {
+                level : level,
+                style : style,
+                time : time,
+            }
+        })
     }
 
     return (
